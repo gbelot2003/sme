@@ -23,6 +23,7 @@ class CreateRegistersTable extends Migration
             $table->string('ruta');
             $table->string('status');
             $table->string('recibe');
+            $table->integer('banco');
             $table->timestamps();
         });
     }

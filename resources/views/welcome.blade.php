@@ -1,3 +1,4 @@
+{{--
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -9,60 +10,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -93,3 +40,46 @@
         </div>
     </body>
 </html>
+--}}
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Track de cuentas</div>
+                    <div class="panel-body">
+                        <p>Introdusca los datos de busqueda</p>
+
+                        <form id="formSearch" class="form">
+                            {{--Codigo de Banco--}}
+                            <div class="form-group">
+                                <label for="codigo">Código de Banco</label>
+                                <input type="number" class="form-control" id="codigo" placeholder="Código de Banco">
+                            </div>
+
+                            {{--No. de cuenta--}}
+                            <div class="form-group">
+                                <label for="cuenta">No. de Cuenta</label>
+                                <input type="number" class="form-control" id="cuenta" placeholder="No. de Cuenta">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Buscar
+                            </button>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div id="contenido">
+                    <img src="/images/SLIDER8.png" class="img-responsive" alt="SLIDER8.png">
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

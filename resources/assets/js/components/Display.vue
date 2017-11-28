@@ -61,6 +61,11 @@
                 <div class="col-md-6">
                     <h5>Fecha: <span class="resaltados">{{ fecha | formatDate }}</span></h5>
                 </div>
+
+                <div class="col-md-12">
+                    <p>Observaciones</p>
+                    <p>{{ observaciones }}</p>
+                </div>
             </div>
 
 
@@ -73,7 +78,7 @@
     import moment from 'moment';
 
     export default{
-        props: ['cuenta', 'destinatario', 'direccion', 'municipio', 'departamento', 'ruta', 'estatus', 'recibe', 'fecha', 'banco'],
+        props: ['cuenta', 'destinatario', 'direccion', 'municipio', 'departamento', 'ruta', 'estatus', 'recibe', 'fecha', 'banco', 'observaciones'],
         data(){
             return {}
         }

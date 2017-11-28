@@ -28087,7 +28087,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(135);
-module.exports = __webpack_require__(173);
+module.exports = __webpack_require__(172);
 
 
 /***/ }),
@@ -59320,7 +59320,7 @@ var normalizeComponent = __webpack_require__(132)
 /* script */
 var __vue_script__ = __webpack_require__(166)
 /* template */
-var __vue_template__ = __webpack_require__(172)
+var __vue_template__ = __webpack_require__(171)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -59508,6 +59508,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -59530,6 +59531,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'estatus': '',
                 'recibe': '',
                 'banco': '',
+                'observaciones': '',
                 'fecha': ''
             }
         };
@@ -59569,6 +59571,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this.custom.estatus = resp.data.status;
                     _this.custom.recibe = resp.data.recibe;
                     _this.custom.banco = resp.data.banco;
+                    _this.custom.observaciones = resp.data.observaciones;
                     _this.custom.fecha = resp.data.created_at;
 
                     setTimeout(function () {
@@ -59709,12 +59712,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['cuenta', 'destinatario', 'direccion', 'municipio', 'departamento', 'ruta', 'estatus', 'recibe', 'fecha', 'banco'],
+    props: ['cuenta', 'destinatario', 'direccion', 'municipio', 'departamento', 'ruta', 'estatus', 'recibe', 'fecha', 'banco', 'observaciones'],
     data: function data() {
         return {};
     }
@@ -59823,6 +59831,12 @@ var render = function() {
               _vm._v(_vm._s(_vm._f("formatDate")(_vm.fecha)))
             ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("p", [_vm._v("Observaciones")]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.observaciones))])
         ])
       ])
     ])
@@ -59839,8 +59853,7 @@ if (false) {
 }
 
 /***/ }),
-/* 171 */,
-/* 172 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -59988,7 +60001,8 @@ var render = function() {
                     estatus: _vm.custom.estatus,
                     recibe: _vm.custom.recibe,
                     banco: _vm.custom.banco,
-                    fecha: _vm.custom.fecha
+                    fecha: _vm.custom.fecha,
+                    observaciones: _vm.custom.observaciones
                   }
                 })
               ],
@@ -60010,7 +60024,7 @@ if (false) {
 }
 
 /***/ }),
-/* 173 */
+/* 172 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

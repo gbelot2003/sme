@@ -54,6 +54,7 @@
                         v-bind:recibe="custom.recibe"
                         v-bind:banco="custom.banco"
                         v-bind:fecha="custom.fecha"
+                        v-bind:observaciones="custom.observaciones"
                 >
                 </display>
 
@@ -87,6 +88,7 @@
                     'estatus':'',
                     'recibe':'',
                     'banco':'',
+                    'observaciones':'',
                     'fecha':''
                 }
             }
@@ -130,6 +132,7 @@
                              this.custom.estatus = resp.data.status;
                              this.custom.recibe = resp.data.recibe;
                              this.custom.banco = resp.data.banco;
+                             this.custom.observaciones = resp.data.observaciones;
                              this.custom.fecha = resp.data.created_at;
 
                             setTimeout(function () {

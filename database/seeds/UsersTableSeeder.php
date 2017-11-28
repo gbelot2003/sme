@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Gerardo Belot',
                 'email' => 'gbelot2003@hotmail.com',
                 'password' => '$2y$10$xx7BucB.Qw9VRglppMdFLeJNMFVEy7T0SGuxrCnjM7VYw9eHeTYLK',
+                'state_id' => 1,
                 'remember_token' => NULL,
                 'created_at' => '2017-11-25 16:39:51',
                 'updated_at' => '2017-11-25 16:39:51',

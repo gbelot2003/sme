@@ -25,11 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return View('home');
     }
 
     public function uploadHandler(Request $request)
     {
+        $i = 0;
+        $o = 0;
+        $u = 0;
+
         $file = Input::file('file');
         $file_name = $file->getClientOriginalName();
         $file->move('files', $file_name);
@@ -43,10 +48,11 @@ class HomeController extends Controller
 
         if($results->count()){
             foreach ($results as $key => $value) {
-
+                $i++;
                 $register = Register::where('cuenta', $value->cuenta)->first();
 
                 if(count($register)){
+                    $o++;
                     $register->update([
                         'cuenta' => $value->cuenta,
                         'destinatario' => $value->destinatario,
@@ -61,6 +67,7 @@ class HomeController extends Controller
 
                     ]);
                 } else {
+                    $u++;
                     Register::create([
                         'cuenta' => $value->cuenta,
                         'destinatario' => $value->destinatario,
@@ -76,9 +83,11 @@ class HomeController extends Controller
                     ]);
                 }
             }
+
         }
 
-        return $results;
+        flash("<strong>". $i. "</strong> Filas procesadas, <strong>" . $o . "</strong> actualizadas y <strong>" . $u . "</strong> creadas");
+        return redirect()->to('/home');
 
     }
 }

@@ -14,8 +14,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @include('layouts._nav')
+<div id="app">
+    @include('layouts._nav')
+    <div class="container">
+        @include('flash::message')
+    </div>
 
         @yield('content')
     </div>

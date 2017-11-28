@@ -57,6 +57,7 @@ class HomeController extends Controller
                         'status' => $value->estatus,
                         'recibe' => $value->persona_quien_recibe,
                         'banco' => $value->banco,
+                        'observaciones' => $value->banco,
 
                     ]);
                 } else {
@@ -70,6 +71,7 @@ class HomeController extends Controller
                         'status' => $value->estatus,
                         'recibe' => $value->persona_quien_recibe,
                         'banco' => $value->banco,
+                        'observaciones' => $value->banco,
 
                     ]);
                 }

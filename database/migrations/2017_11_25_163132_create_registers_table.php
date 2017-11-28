@@ -24,6 +24,7 @@ class CreateRegistersTable extends Migration
             $table->string('status')->nullable();
             $table->string('recibe')->nullable();
             $table->integer('banco')->nullable();
+            $table->text('observaciones')->nullable();
             $table->timestamps();
         });
     }

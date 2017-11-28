@@ -3,18 +3,27 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
+                <div class="panel-heading">Subir Archivo excel</div>
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
 
-                    You are logged in!
+                        <div class="form-group">
+                            <label for="file">Selecciona un archivo de excel</label>
+                            <input type="file" name="file" id="file" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-upload" aria-hidden="true"></i>
+                                Subir
+                            </button>
+
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>

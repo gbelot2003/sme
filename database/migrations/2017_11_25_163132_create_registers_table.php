@@ -15,15 +15,15 @@ class CreateRegistersTable extends Migration
     {
         Schema::create('registers', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('cuenta');
-            $table->string('destinatario');
-            $table->text('direccion');
-            $table->string('municipio');
-            $table->string('departamento');
-            $table->string('ruta');
-            $table->string('status');
-            $table->string('recibe');
-            $table->integer('banco');
+            $table->bigInteger('cuenta')->nullable();
+            $table->string('destinatario')->nullable();
+            $table->text('direccion')->nullable();
+            $table->string('municipio')->nullable();
+            $table->string('departamento')->nullable();
+            $table->string('ruta')->nullable();
+            $table->string('status')->nullable();
+            $table->string('recibe')->nullable();
+            $table->integer('banco')->nullable();
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@
 <div class="row">
     <div class="col-md-6 box-style form-group">
         <label for="state">Estado</label>
-        {!! Form::select('status_id', $state, null, ['class' => 'form-control']) !!}
+        {!! Form::select('state_id', $state, null, ['class' => 'form-control']) !!}
     </div>
 
     <div class="col-md-6 box-style form-group">

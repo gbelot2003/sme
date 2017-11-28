@@ -4,6 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <a class="btn btn-primary" href="/users/create"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo</a>
+                <hr />
                 <table class="table table-bordered table-hover table-striped">
                     <thead>
                         <th>Nombre</th>

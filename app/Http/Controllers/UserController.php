@@ -8,6 +8,7 @@ use App\Http\Requests\UserRequest;
 use App\Role;
 use App\State;
 use App\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -32,16 +33,28 @@ class UserController extends Controller
      */
     public function create()
     {
-
+        $state = State::pluck('name', 'id');
+        $roles = array('admin' => 'Admin', 'standar' => 'Standar');
+        return View('users.create', compact('state', 'roles'));
     }
 
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
+        if ($request->input('password')):
+            $request['password'] = bcrypt($request->input('password'));
+            unset($request['password_confirmation']);
+        else:
+            unset($request['password']);
+            unset($request['password_confirmation']);
+        endif;
 
+        //dd($request->all());
+        User::create($request->all());
+        return redirect()->to('/users');
     }
 
     /**

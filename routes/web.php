@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 Route::get('/searchData/{banco}/{cuenta}', 'RegisterController@search');
 
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 

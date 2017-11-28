@@ -68,7 +68,7 @@
                     <img src="/images/garantia.jpg" alt="sme" class="img-responsive">
                 </div>
                 <div class="col-md-4">
-                    <img src="/images/direccion.jpg" alt="sme" class="img-responsive">
+                    <img src="/images/logo2.jpg" alt="sme" class="img-responsive">
                 </div>
             </div>
         </div>

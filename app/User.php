@@ -30,7 +30,7 @@ class User extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function status()
+    public function states()
     {
         return $this->belongsTo(State::class, 'state_id', 'id');
     }

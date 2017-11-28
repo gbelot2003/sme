@@ -8,6 +8,7 @@
                     <thead>
                         <th>Nombre</th>
                         <th>Correo</th>
+                        <th>Role</th>
                         <th>Estado</th>
                         <th>Acción</th>
                     </thead>
@@ -16,12 +17,14 @@
                             <tr>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td></td>
+                                <td>{{ $item->role }}</td>
+                                <td>{{ $item->states->name }}</td>
+                                <td><a class="btn btn-primary" href="/users/{{ $item->id }}/edit">Editar</a></td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                {{ $items->links() }}
             </div>
         </div>
     </div>

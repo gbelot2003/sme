@@ -44,16 +44,16 @@
 
             <div id="contenido2" v-if="step_2 === true">
                 <display
-                        cuenta="101000002260"
-                        destinatario="AYRE TEGUCIGALPA SA"
-                        direccion="BARRIO CONCEPCION"
-                        municipio="COMAYAGUELA"
-                        departamento="FRANCISCO MORAZAN"
-                        ruta="C1"
-                        estatus="ENTREGADO"
-                        recibe="MIGUEL ANGEL MONCADA"
-                        banco="8658"
-                        fecha="2017-11-25 16:39:51"
+                        v-bind:cuenta="custom.cuenta"
+                        v-bind:destinatario="custom.destinatario"
+                        v-bind:direccion="custom.direccion"
+                        v-bind:municipio="custom.municipio"
+                        v-bind:departamento="custom.departamento"
+                        v-bind:ruta="custom.ruta"
+                        v-bind:estatus="custom.estatus"
+                        v-bind:recibe="custom.recibe"
+                        v-bind:banco="custom.banco"
+                        v-bind:fecha="custom.fecha"
                 >
                 </display>
 
@@ -86,6 +86,7 @@
                     'ruta':'',
                     'estatus':'',
                     'recibe':'',
+                    'banco':'',
                     'fecha':''
                 }
             }
@@ -106,26 +107,39 @@
             },
 
             postValues(){
-                let toSend = {
-                    codigo: this.codigo,
-                    cuenta: this.cuenta,
-                }
 
-                this.loader = true;
 
-                axios.get('/searchData')
+
+                axios.get('/searchData/' + this.codigo + '/' + this.cuenta)
                     .then(resp => {
 
-                        this.step_1 = false;
-                        this.step_2 = true;
+                       console.log(resp);
 
-                        console.log(resp);
+                        if(resp.data == 'Sin_datos'){
+                            alert("No se encontraron datos");
+                        } else {
+                            this.loader = true;
+                            this.step_1 = false;
+                            this.step_2 = true;
+                            this.custom.cuenta = resp.data.cuenta;
+                             this.custom.destinatario = resp.data.destinatario;
+                             this.custom.direccion = resp.data.direccion;
+                             this.custom.municipio = resp.data.municipio;
+                             this.custom.departamento = resp.data.departamento;
+                             this.custom.ruta = resp.data.ruta;
+                             this.custom.estatus = resp.data.status;
+                             this.custom.recibe = resp.data.recibe;
+                             this.custom.banco = resp.data.banco;
+                             this.custom.fecha = resp.data.created_at;
 
-                        setTimeout(function () {
+                            setTimeout(function () {
 
-                            this.loader = false
+                             this.loader = false
 
-                        }.bind(this), 2000)
+                             }.bind(this), 1000)
+                        }
+
+
                     })
             }
         },

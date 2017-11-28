@@ -59529,6 +59529,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'ruta': '',
                 'estatus': '',
                 'recibe': '',
+                'banco': '',
                 'fecha': ''
             }
         };
@@ -59549,24 +59550,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         postValues: function postValues() {
             var _this = this;
 
-            var toSend = {
-                codigo: this.codigo,
-                cuenta: this.cuenta
-            };
-
-            this.loader = true;
-
-            axios.get('/searchData').then(function (resp) {
-
-                _this.step_1 = false;
-                _this.step_2 = true;
+            axios.get('/searchData/' + this.codigo + '/' + this.cuenta).then(function (resp) {
 
                 console.log(resp);
 
-                setTimeout(function () {
+                if (resp.data == 'Sin_datos') {
+                    alert("No se encontraron datos");
+                } else {
+                    _this.loader = true;
+                    _this.step_1 = false;
+                    _this.step_2 = true;
+                    _this.custom.cuenta = resp.data.cuenta;
+                    _this.custom.destinatario = resp.data.destinatario;
+                    _this.custom.direccion = resp.data.direccion;
+                    _this.custom.municipio = resp.data.municipio;
+                    _this.custom.departamento = resp.data.departamento;
+                    _this.custom.ruta = resp.data.ruta;
+                    _this.custom.estatus = resp.data.status;
+                    _this.custom.recibe = resp.data.recibe;
+                    _this.custom.banco = resp.data.banco;
+                    _this.custom.fecha = resp.data.created_at;
 
-                    this.loader = false;
-                }.bind(_this), 2000);
+                    setTimeout(function () {
+
+                        this.loader = false;
+                    }.bind(_this), 1000);
+                }
             });
         }
     },
@@ -59970,16 +59979,16 @@ var render = function() {
               [
                 _c("display", {
                   attrs: {
-                    cuenta: "101000002260",
-                    destinatario: "AYRE TEGUCIGALPA SA",
-                    direccion: "BARRIO CONCEPCION",
-                    municipio: "COMAYAGUELA",
-                    departamento: "FRANCISCO MORAZAN",
-                    ruta: "C1",
-                    estatus: "ENTREGADO",
-                    recibe: "MIGUEL ANGEL MONCADA",
-                    banco: "8658",
-                    fecha: "2017-11-25 16:39:51"
+                    cuenta: _vm.custom.cuenta,
+                    destinatario: _vm.custom.destinatario,
+                    direccion: _vm.custom.direccion,
+                    municipio: _vm.custom.municipio,
+                    departamento: _vm.custom.departamento,
+                    ruta: _vm.custom.ruta,
+                    estatus: _vm.custom.estatus,
+                    recibe: _vm.custom.recibe,
+                    banco: _vm.custom.banco,
+                    fecha: _vm.custom.fecha
                   }
                 })
               ],

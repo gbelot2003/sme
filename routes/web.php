@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/searchData', 'RegisterController@search');
+Route::get('/searchData/{banco}/{cuenta}', 'RegisterController@search');
 
 
 Auth::routes();

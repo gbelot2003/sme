@@ -2,10 +2,9 @@
     <div class="container">
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">Track de cuentas</div>
+                <div class="panel-heading" style="background-color: #464847; color:#FFF28E;">Track de cuentas</div>
 
                 <div class="panel-body">
-
                     <p>Introdusca los datos de busqueda</p>
 
                     <form @submit.prevent="postValues"  class="form">
@@ -28,11 +27,10 @@
                     </form>
 
                 </div>
-
             </div>
         </div>
 
-        <div class="col-md-8" style="position: relative">
+        <div class="col-md-8" style="position: relative; margin-bottom: 12rem">
 
             <div class="loader" v-if="loader === true">
                 <img src="/images/loading.gif" alt="loading"/>
@@ -57,9 +55,22 @@
                         v-bind:observaciones="custom.observaciones"
                 >
                 </display>
-
             </div>
 
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <hr />
+                <div class="col-md-4">
+                    <img src="/images/logo_sme2.jpg" alt="sme" class="img-responsive">
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/garantia.jpg" alt="sme" class="img-responsive">
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/direccion.jpg" alt="sme" class="img-responsive">
+                </div>
+            </div>
         </div>
 
     </div>
@@ -158,6 +169,10 @@
 </script>
 
 <style>
+    .contenido2{
+        background-color: white;
+    }
+
     .loader {
         width: 100%;
         height: 100%;

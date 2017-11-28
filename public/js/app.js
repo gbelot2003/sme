@@ -59394,7 +59394,7 @@ exports = module.exports = __webpack_require__(130)(undefined);
 
 
 // module
-exports.push([module.i, "\n.loader {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    background: #F5F8FA;\n    z-index: 1;\n}\n.loader img {\n    background: #F5F8FA;\n    position: relative;\n    top: 0%;\n    left: 30%;\n}\n\n", ""]);
+exports.push([module.i, "\n.contenido2{\n    background-color: white;\n}\n.loader {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    background: #F5F8FA;\n    z-index: 1;\n}\n.loader img {\n    background: #F5F8FA;\n    position: relative;\n    top: 0%;\n    left: 30%;\n}\n\n", ""]);
 
 // exports
 
@@ -59442,6 +59442,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Display_vue__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Display_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Display_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -59863,9 +59874,14 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "col-md-4" }, [
       _c("div", { staticClass: "panel panel-default" }, [
-        _c("div", { staticClass: "panel-heading" }, [
-          _vm._v("Track de cuentas")
-        ]),
+        _c(
+          "div",
+          {
+            staticClass: "panel-heading",
+            staticStyle: { "background-color": "#464847", color: "#FFF28E" }
+          },
+          [_vm._v("Track de cuentas")]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "panel-body" }, [
           _c("p", [_vm._v("Introdusca los datos de busqueda")]),
@@ -59966,7 +59982,10 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "col-md-8", staticStyle: { position: "relative" } },
+      {
+        staticClass: "col-md-8",
+        staticStyle: { position: "relative", "margin-bottom": "12rem" }
+      },
       [
         _vm.loader === true
           ? _c("div", { staticClass: "loader" }, [
@@ -60010,10 +60029,44 @@ var render = function() {
             )
           : _vm._e()
       ]
-    )
+    ),
+    _vm._v(" "),
+    _vm._m(0, false, false)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            staticClass: "img-responsive",
+            attrs: { src: "/images/logo_sme2.jpg", alt: "sme" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            staticClass: "img-responsive",
+            attrs: { src: "/images/garantia.jpg", alt: "sme" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            staticClass: "img-responsive",
+            attrs: { src: "/images/direccion.jpg", alt: "sme" }
+          })
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -59523,7 +59523,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -59543,6 +59542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'recibe': '',
                 'banco': '',
                 'observaciones': '',
+                'corte': '',
                 'fecha': ''
             }
         };
@@ -59583,6 +59583,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this.custom.recibe = resp.data.recibe;
                     _this.custom.banco = resp.data.banco;
                     _this.custom.observaciones = resp.data.observaciones;
+                    _this.custom.corte = resp.data.corte;
                     _this.custom.fecha = resp.data.created_at;
 
                     setTimeout(function () {
@@ -59728,12 +59729,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['cuenta', 'destinatario', 'direccion', 'municipio', 'departamento', 'ruta', 'estatus', 'recibe', 'fecha', 'banco', 'observaciones'],
+    props: ['cuenta', 'destinatario', 'direccion', 'municipio', 'departamento', 'ruta', 'estatus', 'recibe', 'fecha', 'banco', 'observaciones', 'corte'],
     data: function data() {
         return {};
     }
@@ -59840,6 +59845,15 @@ var render = function() {
             _vm._v("Fecha: "),
             _c("span", { staticClass: "resaltados" }, [
               _vm._v(_vm._s(_vm._f("formatDate")(_vm.fecha)))
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("h5", [
+            _vm._v("Corte: "),
+            _c("span", { staticClass: "resaltados" }, [
+              _vm._v(_vm._s(_vm.corte))
             ])
           ])
         ]),

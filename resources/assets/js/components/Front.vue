@@ -79,7 +79,6 @@
 <script>
     import Vue from 'vue';
     import Display from './Display.vue';
-
     export default {
 
         data (){
@@ -100,6 +99,7 @@
                     'recibe':'',
                     'banco':'',
                     'observaciones':'',
+                    'corte':'',
                     'fecha':''
                 }
             }
@@ -144,6 +144,7 @@
                              this.custom.recibe = resp.data.recibe;
                              this.custom.banco = resp.data.banco;
                              this.custom.observaciones = resp.data.observaciones;
+                             this.custom.corte = resp.data.corte;
                              this.custom.fecha = resp.data.created_at;
 
                             setTimeout(function () {

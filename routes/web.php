@@ -26,3 +26,5 @@ Route::resource('/users', 'UserController');
 Route::post('/upload', 'HomeController@uploadHandler');
 
 Route::get('/reportes', 'ReportesController@index');
+
+Route::post('/reportes', 'ReportesController@reporte');

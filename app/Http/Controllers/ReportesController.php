@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Register;
 use Illuminate\Http\Request;
+use Acme\Helpers\FormatQueryDates;
 
 class ReportesController extends Controller
 {
@@ -18,10 +19,20 @@ class ReportesController extends Controller
 
     public function reporte(Request $request)
     {
-        $register = Register::SelectRaw('status, COUNT(id) as total')
-            ->where('banco', 83985)
-            ->groupBy('status')
-            ->get();
-        return $register;
+        $inicio = $request->input('inicio');
+        $final = $request->input('final');
+        $banco = $request->input('banco');
+
+        $dates = new FormatQueryDates($inicio, $final);
+        list($bdate, $edate) = $dates->formatQueryDates();
+
+
+        $registro = Register::SelectRaw('status, COUNT(id) as total')
+            ->whereBetween('updated_at', [$bdate, $edate])
+            ->where('banco', $banco)
+            ->groupBy('status');
+
+        return  $registro->get();
+
     }
 }

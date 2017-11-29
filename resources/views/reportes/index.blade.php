@@ -11,19 +11,19 @@
 
                         <div class="col-md-3 form-group  ">
                             <label for="inicio">Fecha de Inicio</label>
-                            <input class="form-control dateclass" id="inicio" required="" name="inicio" type="text"
-                                   value="28/11/2017">
+                            <input class="form-control dateclass" id="inicio" required="" name="inicio" type="date"
+                                   value="<?php echo date('Y-m-d') ?>">
                         </div>
 
                         <div class="col-md-3 form-group  ">
                             <label for="inicio">Fecha de Final</label>
-                            <input class="form-control dateclass" id="final" required="" name="final" type="text"
-                                   value="28/11/2017">
+                            <input class="form-control dateclass" id="final" required="" name="final" type="date"
+                                   value="<?php echo date('Y-m-d') ?>">
                         </div>
 
                         <div class="col-md-3 form-group  ">
                             <label for="inicio">Código de Banco</label>
-                            <input class="form-control dateclass" id="final" required="" name="final" type="text"
+                            <input class="form-control dateclass" id="final" required="" name="banco" type="text"
                                    value="">
                         </div>
 

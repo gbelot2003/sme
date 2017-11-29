@@ -12,7 +12,8 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "maatwebsite/excel": "~2.1.0",
-        "orangehill/iseed": "dev-master"
+        "orangehill/iseed": "dev-master",
+        "elibyy/tcpdf-laravel": "5.5.*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

@@ -5,7 +5,7 @@
                 <div class="panel-heading" style="background-color: #464847; color:#FFF28E;">Track de cuentas</div>
 
                 <div class="panel-body">
-                    <p>Introdusca los datos de busqueda</p>
+                    <p>Introduzca los datos de busqueda</p>
 
                     <form @submit.prevent="postValues"  class="form">
 

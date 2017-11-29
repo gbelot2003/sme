@@ -14,4 +14,10 @@ class ReportesController extends Controller
     {
         return View('reportes.index');
     }
+
+    public function reporte(Request $request)
+    {
+        //query maker
+        //file processor
+    }
 }

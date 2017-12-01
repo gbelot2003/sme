@@ -26,6 +26,9 @@
                         </button>
                     </form>
 
+                    <hr />
+
+                    <img src="/images/garantia.jpg" alt="sme" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -37,7 +40,7 @@
             </div>
 
             <div id="contenido" v-if="step_1 === true">
-                <img src="/images/SLIDER8.png" class="img-responsive" alt="SLIDER8.png">
+                <img src="/images/back1.jpg" class="img-responsive" alt="SLIDER8.png">
             </div>
 
             <div id="contenido2" v-if="step_2 === true">
@@ -61,15 +64,7 @@
         <div class="col-md-12">
             <div class="row">
                 <hr />
-                <div class="col-md-4">
-                    <img src="/images/logo_sme2.jpg" alt="sme" class="img-responsive">
-                </div>
-                <div class="col-md-4">
-                    <img src="/images/garantia.jpg" alt="sme" class="img-responsive">
-                </div>
-                <div class="col-md-4">
-                    <img src="/images/logo2.jpg" alt="sme" class="img-responsive">
-                </div>
+
             </div>
         </div>
 

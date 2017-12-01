@@ -16,7 +16,9 @@
 <body>
 <div id="app">
     @include('layouts._nav-front')
-
+    <div class="postNav_a">
+        <img src="/images/header.jpg" alt="header">
+    </div>
     @yield('content')
 </div>
 

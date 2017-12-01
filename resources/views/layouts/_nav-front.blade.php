@@ -1,4 +1,4 @@
-<nav class="navbar navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar navba navbar-static-top" style="background-color: #4E4E4E; margin-bottom: 0;">
     <div class="container">
         <div class="navbar-header">
 

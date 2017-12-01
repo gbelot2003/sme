@@ -28121,7 +28121,7 @@ Vue.component('display', __webpack_require__(133));
 
 Vue.filter('formatDate', function (value) {
     if (value) {
-        return __WEBPACK_IMPORTED_MODULE_0_moment___default()(String(value)).format('MM/DD/YYYY hh:mm');
+        return __WEBPACK_IMPORTED_MODULE_0_moment___default()(String(value)).format('MM/DD/YYYY');
     }
 });
 
@@ -59515,11 +59515,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -59989,7 +59984,14 @@ var render = function() {
                 ]
               )
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "img-responsive",
+            attrs: { src: "/images/garantia.jpg", alt: "sme" }
+          })
         ])
       ])
     ]),
@@ -60013,7 +60015,7 @@ var render = function() {
           ? _c("div", { attrs: { id: "contenido" } }, [
               _c("img", {
                 staticClass: "img-responsive",
-                attrs: { src: "/images/SLIDER8.png", alt: "SLIDER8.png" }
+                attrs: { src: "/images/back1.jpg", alt: "SLIDER8.png" }
               })
             ])
           : _vm._e(),
@@ -60054,30 +60056,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("img", {
-            staticClass: "img-responsive",
-            attrs: { src: "/images/logo_sme2.jpg", alt: "sme" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("img", {
-            staticClass: "img-responsive",
-            attrs: { src: "/images/garantia.jpg", alt: "sme" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("img", {
-            staticClass: "img-responsive",
-            attrs: { src: "/images/logo2.jpg", alt: "sme" }
-          })
-        ])
-      ])
+      _c("div", { staticClass: "row" }, [_c("hr")])
     ])
   }
 ]

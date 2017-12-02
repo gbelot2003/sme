@@ -55,6 +55,7 @@
                         v-bind:recibe="custom.recibe"
                         v-bind:banco="custom.banco"
                         v-bind:fecha="custom.fecha"
+                        v-bind:corte="custom.corte"
                         v-bind:observaciones="custom.observaciones"
                 >
                 </display>

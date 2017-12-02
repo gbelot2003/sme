@@ -16,6 +16,7 @@
 <body>
 <div id="app">
     @include('layouts._nav-front')
+    <div class="postNav_a"></div>
     @yield('content')
 </div>
 

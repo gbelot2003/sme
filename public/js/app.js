@@ -59989,7 +59989,7 @@ var render = function() {
           _c("hr"),
           _vm._v(" "),
           _c("img", {
-            staticClass: "img-responsive",
+            staticClass: "img-responsive hidden-xs hidden-sm",
             attrs: { src: "/images/garantia.jpg", alt: "sme" }
           })
         ])

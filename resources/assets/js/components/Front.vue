@@ -28,7 +28,7 @@
 
                     <hr />
 
-                    <img src="/images/garantia.jpg" alt="sme" class="img-responsive">
+                    <img src="/images/garantia.jpg" alt="sme" class="img-responsive hidden-xs hidden-sm">
                 </div>
             </div>
         </div>

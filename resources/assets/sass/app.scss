@@ -18,6 +18,20 @@
   margin-bottom: 7rem;
 }
 
-postNav_b{
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 10px;
+  width: auto;
+}
 
+.navbar-toggle{
+  background: white;
+  border: #4e4e4e;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #4e4e4e;
 }

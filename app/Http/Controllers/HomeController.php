@@ -47,6 +47,7 @@ class HomeController extends Controller
 
 
         if($results->count()){
+            //dd($results->toArray());
             foreach ($results as $key => $value) {
                 $i++;
                 $register = Register::where('cuenta', $value->cuenta)->first();
@@ -61,9 +62,10 @@ class HomeController extends Controller
                         'departamento' => $value->departamento,
                         'ruta' => $value->ruta,
                         'status' => $value->estatus,
-                        'recibe' => $value->persona_quien_recibe,
-                        'banco' => $value->banco,
+                        'recibe' => $value->recibe,
                         'observaciones' => $value->observacion_telefono,
+                        'banco' => $value->banco,
+                        'corte' => $value->corte,
 
                     ]);
                 } else {
@@ -76,9 +78,10 @@ class HomeController extends Controller
                         'departamento' => $value->departamento,
                         'ruta' => $value->ruta,
                         'status' => $value->estatus,
-                        'recibe' => $value->persona_quien_recibe,
-                        'banco' => $value->banco,
+                        'recibe' => $value->recibe,
                         'observaciones' => $value->observacion_telefono,
+                        'banco' => $value->banco,
+                        'corte' => $value->corte,
 
                     ]);
                 }

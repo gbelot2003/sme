@@ -25,8 +25,8 @@ class CreateRegistersTable extends Migration
             $table->string('recibe')->nullable();
             $table->integer('banco')->nullable();
             $table->text('observaciones')->nullable();
-            //$table->date('fecha')->nullable();
-            $table->integer('corte')->nullable();
+            $table->date('fecha')->nullable();
+            $table->string('corte')->nullable();
             $table->timestamps();
         });
     }

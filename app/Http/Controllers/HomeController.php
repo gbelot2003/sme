@@ -65,6 +65,7 @@ class HomeController extends Controller
                         'recibe' => $value->recibe,
                         'observaciones' => $value->observacion_telefono,
                         'banco' => $value->banco,
+                        'fecha' => $value->fecha,
                         'corte' => $value->corte,
 
                     ]);
@@ -81,6 +82,7 @@ class HomeController extends Controller
                         'recibe' => $value->recibe,
                         'observaciones' => $value->observacion_telefono,
                         'banco' => $value->banco,
+                        'fecha' => $value->fecha,
                         'corte' => $value->corte,
 
                     ]);

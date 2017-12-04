@@ -4,8 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+
             <div class="panel panel-default">
                 <div class="panel-heading">Subir Archivo excel</div>
+                
                 <div class="panel-body">
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -26,6 +28,8 @@
                     </form>
                 </div>
             </div>
+
+            <a class="btn btn-default" href="/examples/formato.xlsx">Descargar muestra de formato requerido</a>
         </div>
     </div>
 </div>

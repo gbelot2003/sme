@@ -32,7 +32,19 @@ class ReportesController extends Controller
             ->where('banco', $banco)
             ->groupBy('status');
 
-        return  $registro->get();
+        $registros =  $registro->get();
+
+        $dev = Register::Select('cuenta', 'destinatario', 'ruta', 'observaciones')
+            ->whereBetween('updated_at', [$bdate, $edate])
+            ->where('status', "DEVOLUCION");
+
+        $devolucion = $dev->get();
+
+        return $dev = array([
+            'registros' => $registros,
+            'dev' => $devolucion
+        ]);
+
 
     }
 }

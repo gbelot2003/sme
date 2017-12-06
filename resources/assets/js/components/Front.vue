@@ -7,7 +7,7 @@
                 <div class="panel-body">
                     <p>Introduzca los datos de busqueda</p>
 
-                    <form @submit.prevent="postValues"  class="form">
+                    <form @submit.prevent="postValues" class="form">
 
                         <div class="form-group">
                             <label for="codigo">Código de Banco</label>
@@ -26,7 +26,7 @@
                         </button>
                     </form>
 
-                    <hr />
+                    <hr/>
 
                     <img src="/images/garantia.jpg" alt="sme" class="img-responsive hidden-xs hidden-sm">
                 </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="col-md-12">
             <div class="row">
-                <hr />
+                <hr/>
 
             </div>
         </div>
@@ -84,20 +84,7 @@
                 loader: true,
                 codigo: '',
                 cuenta: '',
-                custom:{
-                    'cuenta':'',
-                    'destinatario':'',
-                    'direccion':'',
-                    'municipio':'',
-                    'departamento':'',
-                    'ruta':'',
-                    'estatus':'',
-                    'recibe':'',
-                    'banco':'',
-                    'observaciones':'',
-                    'corte':'',
-                    'fecha':''
-                }
+                custom: '',
             }
         },
 
@@ -117,37 +104,24 @@
 
             postValues(){
 
-
-
                 axios.get('/searchData/' + this.codigo + '/' + this.cuenta)
                     .then(resp => {
 
-                       console.log(resp);
 
-                        if(resp.data == 'Sin_datos'){
+
+                        if (resp.data == 'Sin_datos') {
                             alert("No se encontraron datos");
                         } else {
                             this.loader = true;
                             this.step_1 = false;
                             this.step_2 = true;
-                            this.custom.cuenta = resp.data.cuenta;
-                             this.custom.destinatario = resp.data.destinatario;
-                             this.custom.direccion = resp.data.direccion;
-                             this.custom.municipio = resp.data.municipio;
-                             this.custom.departamento = resp.data.departamento;
-                             this.custom.ruta = resp.data.ruta;
-                             this.custom.estatus = resp.data.status;
-                             this.custom.recibe = resp.data.recibe;
-                             this.custom.banco = resp.data.banco;
-                             this.custom.observaciones = resp.data.observaciones;
-                             this.custom.corte = resp.data.corte;
-                             this.custom.fecha = resp.data.created_at;
 
                             setTimeout(function () {
 
-                             this.loader = false
-
-                             }.bind(this), 1000)
+                                this.loader = false
+                                this.custom = resp.data;
+                                console.log(this.custom);
+                            }.bind(this), 1000)
                         }
 
 
@@ -157,7 +131,7 @@
 
         computed: {
             isDisabled() {
-                if(this.codigo == '' || this.cuenta == ''){
+                if (this.codigo == '' || this.cuenta == '') {
                     return true
                 }
             }
@@ -166,7 +140,7 @@
 </script>
 
 <style>
-    .contenido2{
+    .contenido2 {
         background-color: white;
     }
 

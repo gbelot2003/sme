@@ -59394,7 +59394,7 @@ exports = module.exports = __webpack_require__(130)(undefined);
 
 
 // module
-exports.push([module.i, "\n.contenido2{\n    background-color: white;\n}\n.loader {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    background: #F5F8FA;\n    z-index: 1;\n}\n.loader img {\n    background: #F5F8FA;\n    position: relative;\n    top: 0%;\n    left: 30%;\n}\n\n", ""]);
+exports.push([module.i, "\n.contenido2 {\n    background-color: white;\n}\n.loader {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    background: #F5F8FA;\n    z-index: 1;\n}\n.loader img {\n    background: #F5F8FA;\n    position: relative;\n    top: 0%;\n    left: 30%;\n}\n\n", ""]);
 
 // exports
 
@@ -59527,20 +59527,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             loader: true,
             codigo: '',
             cuenta: '',
-            custom: {
-                'cuenta': '',
-                'destinatario': '',
-                'direccion': '',
-                'municipio': '',
-                'departamento': '',
-                'ruta': '',
-                'estatus': '',
-                'recibe': '',
-                'banco': '',
-                'observaciones': '',
-                'corte': '',
-                'fecha': ''
-            }
+            custom: ''
         };
     },
     mounted: function mounted() {
@@ -59561,30 +59548,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.get('/searchData/' + this.codigo + '/' + this.cuenta).then(function (resp) {
 
-                console.log(resp);
-
                 if (resp.data == 'Sin_datos') {
                     alert("No se encontraron datos");
                 } else {
                     _this.loader = true;
                     _this.step_1 = false;
                     _this.step_2 = true;
-                    _this.custom.cuenta = resp.data.cuenta;
-                    _this.custom.destinatario = resp.data.destinatario;
-                    _this.custom.direccion = resp.data.direccion;
-                    _this.custom.municipio = resp.data.municipio;
-                    _this.custom.departamento = resp.data.departamento;
-                    _this.custom.ruta = resp.data.ruta;
-                    _this.custom.estatus = resp.data.status;
-                    _this.custom.recibe = resp.data.recibe;
-                    _this.custom.banco = resp.data.banco;
-                    _this.custom.observaciones = resp.data.observaciones;
-                    _this.custom.corte = resp.data.corte;
-                    _this.custom.fecha = resp.data.created_at;
 
                     setTimeout(function () {
 
                         this.loader = false;
+                        this.custom = resp.data;
+                        console.log(this.custom);
                     }.bind(_this), 1000);
                 }
             });

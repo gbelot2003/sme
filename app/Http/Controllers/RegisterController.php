@@ -14,7 +14,7 @@ class RegisterController extends Controller
     public function search($banco, $cuenta)
     {
 
-        $data = Register::where('banco', $banco)->where('cuenta', $cuenta)->first();
+        $data = Register::where('banco', $banco)->where('cuenta', $cuenta)->get();
         if (count($data)) {
             return $data;
         }

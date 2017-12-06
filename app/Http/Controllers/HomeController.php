@@ -49,44 +49,21 @@ class HomeController extends Controller
         if($results->count()){
             //dd($results->toArray());
             foreach ($results as $key => $value) {
-                $i++;
-                $register = Register::where('cuenta', $value->cuenta)->first();
-
-                if(count($register)){
-                    $o++;
-                    $register->update([
-                        'cuenta' => $value->cuenta,
-                        'destinatario' => $value->destinatario,
-                        'direccion' => $value->direccion,
-                        'municipio' => $value->municipio,
-                        'departamento' => $value->departamento,
-                        'ruta' => $value->ruta,
-                        'status' => $value->estatus,
-                        'recibe' => $value->recibe,
-                        'observaciones' => $value->observacion_telefono,
-                        'banco' => $value->banco,
-                        'fecha' => $value->fecha,
-                        'corte' => $value->corte,
-
-                    ]);
-                } else {
-                    $u++;
-                    Register::create([
-                        'cuenta' => $value->cuenta,
-                        'destinatario' => $value->destinatario,
-                        'direccion' => $value->direccion,
-                        'municipio' => $value->municipio,
-                        'departamento' => $value->departamento,
-                        'ruta' => $value->ruta,
-                        'status' => $value->estatus,
-                        'recibe' => $value->recibe,
-                        'observaciones' => $value->observacion_telefono,
-                        'banco' => $value->banco,
-                        'fecha' => $value->fecha,
-                        'corte' => $value->corte,
-
-                    ]);
-                }
+                $u++;
+                Register::create([
+                    'cuenta' => $value->cuenta,
+                    'destinatario' => $value->destinatario,
+                    'direccion' => $value->direccion,
+                    'municipio' => $value->municipio,
+                    'departamento' => $value->departamento,
+                    'ruta' => $value->ruta,
+                    'status' => $value->estatus,
+                    'recibe' => $value->recibe,
+                    'observaciones' => $value->observacion_telefono,
+                    'banco' => $value->banco,
+                    'fecha' => $value->fecha,
+                    'corte' => $value->corte,
+                ]);
             }
 
         }

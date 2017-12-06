@@ -16,8 +16,6 @@
 
             </div>
 
-            <hr />
-
             <div class="row">
 
                 <div class="col-md-6">
@@ -55,7 +53,7 @@
 
             </div>
 
-            <hr />
+
 
             <div class="row">
                 <div class="col-md-6">
@@ -71,7 +69,7 @@
                     <p>{{ observaciones }}</p>
                 </div>
             </div>
-
+            <hr />
 
         </div>
     </div>

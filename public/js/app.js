@@ -59527,7 +59527,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             loader: true,
             codigo: '',
             cuenta: '',
-            custom: ''
+            custom: []
         };
     },
     mounted: function mounted() {
@@ -59702,8 +59702,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -59747,8 +59745,6 @@ var render = function() {
           ])
         ])
       ]),
-      _vm._v(" "),
-      _c("hr"),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-6" }, [
@@ -59808,8 +59804,6 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-6" }, [
           _c("h5", [
@@ -59834,7 +59828,9 @@ var render = function() {
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(_vm.observaciones))])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c("hr")
     ])
   ])
 }
@@ -60000,25 +59996,25 @@ var render = function() {
           ? _c(
               "div",
               { attrs: { id: "contenido2" } },
-              [
-                _c("display", {
+              _vm._l(_vm.custom, function(custom) {
+                return _c("display", {
+                  key: custom.id,
                   attrs: {
-                    cuenta: _vm.custom.cuenta,
-                    destinatario: _vm.custom.destinatario,
-                    direccion: _vm.custom.direccion,
-                    municipio: _vm.custom.municipio,
-                    departamento: _vm.custom.departamento,
-                    ruta: _vm.custom.ruta,
-                    estatus: _vm.custom.estatus,
-                    recibe: _vm.custom.recibe,
-                    banco: _vm.custom.banco,
-                    fecha: _vm.custom.fecha,
-                    corte: _vm.custom.corte,
-                    observaciones: _vm.custom.observaciones
+                    cuenta: custom.cuenta,
+                    destinatario: custom.destinatario,
+                    direccion: custom.direccion,
+                    municipio: custom.municipio,
+                    departamento: custom.departamento,
+                    ruta: custom.ruta,
+                    estatus: custom.estatus,
+                    recibe: custom.recibe,
+                    banco: custom.banco,
+                    fecha: custom.fecha,
+                    corte: custom.corte,
+                    observaciones: custom.observaciones
                   }
                 })
-              ],
-              1
+              })
             )
           : _vm._e()
       ]

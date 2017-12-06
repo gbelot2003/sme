@@ -44,7 +44,7 @@
             </div>
 
             <div id="contenido2" v-if="step_2 === true">
-                <display
+                <display v-for="custom in custom" :key="custom.id"
                         v-bind:cuenta="custom.cuenta"
                         v-bind:destinatario="custom.destinatario"
                         v-bind:direccion="custom.direccion"
@@ -84,7 +84,7 @@
                 loader: true,
                 codigo: '',
                 cuenta: '',
-                custom: '',
+                custom: [],
             }
         },
 

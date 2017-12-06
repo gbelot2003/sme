@@ -51,7 +51,7 @@
                         v-bind:municipio="custom.municipio"
                         v-bind:departamento="custom.departamento"
                         v-bind:ruta="custom.ruta"
-                        v-bind:estatus="custom.estatus"
+                        v-bind:estatus="custom.status"
                         v-bind:recibe="custom.recibe"
                         v-bind:banco="custom.banco"
                         v-bind:fecha="custom.fecha"

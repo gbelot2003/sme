@@ -60006,7 +60006,7 @@ var render = function() {
                     municipio: custom.municipio,
                     departamento: custom.departamento,
                     ruta: custom.ruta,
-                    estatus: custom.estatus,
+                    estatus: custom.status,
                     recibe: custom.recibe,
                     banco: custom.banco,
                     fecha: custom.fecha,

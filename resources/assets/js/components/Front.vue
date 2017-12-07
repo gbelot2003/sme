@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading" style="background-color: #464847; color:#FFF28E;">Track de cuentas</div>
+                <div class="panel-heading" style="background-color: #166CB5; color: white;">Track de cuentas</div>
 
                 <div class="panel-body">
                     <p>Introduzca los datos de busqueda</p>
@@ -28,7 +28,7 @@
 
                     <hr />
 
-                    <img src="/images/garantia.jpg" alt="sme" class="img-responsive hidden-xs hidden-sm">
+                    <img src="/images/b.jpg" alt="sme" class="img-responsive hidden-xs hidden-sm">
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
             </div>
 
             <div id="contenido" v-if="step_1 === true">
-                <img src="/images/back1.jpg" class="img-responsive" alt="SLIDER8.png">
+                <img src="/images/back2.jpg" class="img-responsive" alt="SLIDER8.png">
             </div>
 
             <div id="contenido2" v-if="step_2 === true">

@@ -1,4 +1,4 @@
-<nav class="navbar navbar navba navbar-static-top" style="background-color: #4E4E4E; margin-bottom: 0">
+<nav class="navbar navbar navba navbar-static-top" style="background-color: #06B8FE; margin-bottom: 0">
     <div class="container">
         <div class="navbar-header">
 
@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img alt="Brand" src="/images/header_a.jpg" style="max-width: 400px; margin-top: -7px;">
+                <img alt="Brand" src="/images/header2.jpg" style="max-width: 400px; margin-top: -7px;">
             </a>
 
         </div>

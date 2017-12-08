@@ -31,9 +31,6 @@ class HomeController extends Controller
 
     public function uploadHandler(Request $request)
     {
-        $i = 0;
-        $o = 0;
-        $u = 0;
 
         $file = Input::file('file');
         $file_name = $file->getClientOriginalName();
@@ -46,29 +43,31 @@ class HomeController extends Controller
         })->get();
 
 
-        if($results->count()){
-            //dd($results->toArray());
-            foreach ($results as $key => $value) {
-                $u++;
-                Register::create([
-                    'cuenta' => $value->cuenta,
-                    'destinatario' => $value->destinatario,
-                    'direccion' => $value->direccion,
-                    'municipio' => $value->municipio,
-                    'departamento' => $value->departamento,
-                    'ruta' => $value->ruta,
-                    'status' => $value->estatus,
-                    'recibe' => $value->recibe,
-                    'observaciones' => $value->observacion_telefono,
-                    'banco' => $value->banco,
-                    'fecha' => $value->fecha,
-                    'corte' => $value->corte,
-                ]);
+        if ($results->count()) {
+            $allintests = [];
+            foreach ($results as $value){
+                $results = new Register();
+                $results->cuenta = $value->cuenta;
+                $results->destinatario = $value->destinatario;
+                $results->direccion = $value->direccion;
+                $results->municipio = $value->municipio;
+                $results->departamento = $value->departamento;
+                $results->ruta = $value->ruta;
+                $results->status = $value->estatus;
+                $results->recibe = $value->recibe;
+                $results->observaciones = $value->observacion_telefono;
+                $results->banco = $value->banco;
+                $results->fecha = $value->fecha;
+                $results->corte = $value->corte;
+                 $allintests[] = $results->attributesToArray();
             }
+
+            Register::insert($allintests);
 
         }
 
-        flash("<strong>". $i. "</strong> Filas procesadas, <strong>" . $o . "</strong> actualizadas y <strong>" . $u . "</strong> creadas");
+
+        flash("Nuevas Filas Creadas, " . $results->count());
         return redirect()->to('/home');
 
     }

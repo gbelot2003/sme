@@ -6,7 +6,7 @@ use App\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Excel;
-
+ini_set('max_execution_time', 450);
 class HomeController extends Controller
 {
     /**
@@ -42,9 +42,11 @@ class HomeController extends Controller
 
         })->get();
 
+        $datas = $results;
 
         if ($results->count()) {
             $allintests = [];
+
             foreach ($results as $value){
                 $results = new Register();
                 $results->cuenta = $value->cuenta;
@@ -62,12 +64,14 @@ class HomeController extends Controller
                  $allintests[] = $results->attributesToArray();
             }
 
-            Register::insert($allintests);
-
+            foreach (array_chunk($allintests, 300) as $edata){
+                foreach ($edata as $c){
+                    Register::insert($c);
+                }
+            }
         }
 
-
-        flash("Nuevas Filas Creadas, " . $results->count());
+        flash("Nuevas Filas Creadas, " . $datas->count());
         return redirect()->to('/home');
 
     }

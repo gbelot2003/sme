@@ -32,9 +32,6 @@ class HomeController extends Controller
 
     public function uploadHandler(Request $request)
     {
-        $i = 0;
-        $o = 0;
-        $u = 0;
 
         $file = Input::file('file');
         $file_name = $file->getClientOriginalName();
@@ -67,12 +64,14 @@ class HomeController extends Controller
                  $allintests[] = $results->attributesToArray();
 
             }
+
             foreach (array_chunk($allintests, 300) as $edata){
                 foreach ($edata as $c){
                     Register::insert($c);
                 }
             }
         }
+
         flash("Nuevas Filas Creadas, " . $datas->count());
         return redirect()->to('/home');
 

@@ -6,6 +6,7 @@ use App\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Excel;
+ini_set('max_execution_time', 450);
 
 class HomeController extends Controller
 {
@@ -45,53 +46,32 @@ class HomeController extends Controller
 
         })->get();
 
-
-        if($results->count()){
-            //dd($results->toArray());
-            foreach ($results as $key => $value) {
-                $i++;
-                $register = Register::where('cuenta', $value->cuenta)->first();
-
-                if(count($register)){
-                    $o++;
-                    $register->update([
-                        'cuenta' => $value->cuenta,
-                        'destinatario' => $value->destinatario,
-                        'direccion' => $value->direccion,
-                        'municipio' => $value->municipio,
-                        'departamento' => $value->departamento,
-                        'ruta' => $value->ruta,
-                        'status' => $value->estatus,
-                        'recibe' => $value->recibe,
-                        'observaciones' => $value->observacion_telefono,
-                        'banco' => $value->banco,
-                        'fecha' => $value->fecha,
-                        'corte' => $value->corte,
-
-                    ]);
-                } else {
-                    $u++;
-                    Register::create([
-                        'cuenta' => $value->cuenta,
-                        'destinatario' => $value->destinatario,
-                        'direccion' => $value->direccion,
-                        'municipio' => $value->municipio,
-                        'departamento' => $value->departamento,
-                        'ruta' => $value->ruta,
-                        'status' => $value->estatus,
-                        'recibe' => $value->recibe,
-                        'observaciones' => $value->observacion_telefono,
-                        'banco' => $value->banco,
-                        'fecha' => $value->fecha,
-                        'corte' => $value->corte,
-
-                    ]);
+        $datas = $results;
+        if ($results->count()) {
+            $allintests = [];
+            foreach ($results as $value){
+                $results = new Register();
+                $results->cuenta = $value->cuenta;
+                $results->destinatario = $value->destinatario;
+                $results->direccion = $value->direccion;
+                $results->municipio = $value->municipio;
+                $results->departamento = $value->departamento;
+                $results->ruta = $value->ruta;
+                $results->status = $value->estatus;
+                $results->recibe = $value->recibe;
+                $results->observaciones = $value->observacion_telefono;
+                $results->banco = $value->banco;
+                $results->fecha = $value->fecha;
+                $results->corte = $value->corte;
+                 $allintests[] = $results->attributesToArray();
+            }
+            foreach (array_chunk($allintests, 300) as $edata){
+                foreach ($edata as $c){
+                    Register::insert($c);
                 }
             }
-
         }
-
-        flash("<strong>". $i. "</strong> Filas procesadas, <strong>" . $o . "</strong> actualizadas y <strong>" . $u . "</strong> creadas");
+        flash("Nuevas Filas Creadas, " . $datas->count());
         return redirect()->to('/home');
 
     }

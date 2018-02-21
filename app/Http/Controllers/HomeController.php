@@ -6,6 +6,7 @@ use App\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Excel;
+ini_set('max_execution_time', 450);
 
 class HomeController extends Controller
 {
@@ -62,7 +63,9 @@ class HomeController extends Controller
                 $results->banco = $value->banco;
                 $results->fecha = $value->fecha;
                 $results->corte = $value->corte;
-                $allintests[] = $results->attributesToArray();
+
+                 $allintests[] = $results->attributesToArray();
+
             }
             foreach (array_chunk($allintests, 300) as $edata){
                 foreach ($edata as $c){
